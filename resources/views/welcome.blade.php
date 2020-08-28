@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
 
         <title>Laravel</title>
 
@@ -48,7 +49,7 @@
                 font-size: 84px;
             }
 
-            .links > a {
+            .link > a {
                 color: #636b6f;
                 padding: 0 25px;
                 font-size: 13px;
@@ -68,30 +69,26 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="/deconnexion" class="btn btn-btn-outline-danger">Deconnexion</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
+                    <a href="/login" class="btn btn-outline-success">Connexion</a>
                     @endauth
                 </div>
             @endif
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                Gestion de la boutique
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
+                <div class="link">
+                    <a href="https://facebook.com">Facebook</a>
+                    <a href="https://whatsapp.com">Whatsapp</a>
+                    <a href="https://twitter.com">Twitter</a>
+                    <a href="https://gmail.com">Gmail</a>
+                    <a href="https://google.com">Google</a>
+                    <a href="https://amazon.com">Amazon</a>
+                    <a href="https://vapor.com">Vapor</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
             </div>

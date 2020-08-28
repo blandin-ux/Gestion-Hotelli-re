@@ -1,5 +1,8 @@
-    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/sclient.css')}}">
+@extends('layouts.backoffice')
+@section('titre')
+{{$client->name}}
+@endsection
+@section('corps')
     </head>
     <body>
       <div style="" class="container pt-4">
@@ -20,5 +23,5 @@
                 </ul>
             </div>
         </div>
-        
-        </div>
+    </div>
+@endsection    

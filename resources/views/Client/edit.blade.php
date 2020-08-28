@@ -1,6 +1,8 @@
-
-          <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-          <link rel="stylesheet" href="{{asset('css/clients.css')}}">
+@extends('layouts.backoffice')
+@section('titre')
+Modification du client {{$client->name}}
+@endsection
+@section('corps')
              <div class="container">
                 <h2 class="text-center pb-3">Modifier {{$client->name}} </h2>
                   <form action="/clients/save" method="post">
@@ -28,3 +30,4 @@
                     </div>
                   </form> 
              </div>
+@endsection             

@@ -1,6 +1,8 @@
-
-          <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-          <link rel="stylesheet" href="{{asset('css/clients.css')}}">
+@extends('layouts.backoffice')
+@section('titre')
+Créer un client
+@endsection
+@section('corps')
              <div class="container">
                 <h2 class="text-center">Ajouter un nouveau client</h2>
                   <form action="/clients" method="post">
@@ -27,3 +29,4 @@
                     </div>
                   </form> 
              </div>
+@endsection             

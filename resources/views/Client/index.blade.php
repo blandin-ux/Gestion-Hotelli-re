@@ -1,11 +1,15 @@
-<link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+@extends('layouts.backoffice')
+@section('titre')
+Liste des clients
+@endsection
+@section('corps')
    <div class="container pt-4 pb-4" id="carte"> 
      <div class="card" id="tcorps">
        <div class="card-header">
          <a href="/clients/create" id="ajouter" class="btn btn-danger btn-sm pb-2">Ajouter <i class="fa fa-user"></i></a>
        </div>
-           <h1 class="page-header text-center" id="h2"> LISTE DES CLIENTS</h1>
-                    <table class="table table-bordered table-striped" > 
+           <h4 class="page-header text-center"> LISTE DES CLIENTS</h4>
+                    <table class="table" > 
                         <thead> 
                             <tr> 
                                 <th></th>
@@ -23,12 +27,12 @@
                                     <td>{{$cli->email}}</td>                
                                     <td>
                                         <ul class="list-inline">
-                                            <li class="list-inline-item"><a href="/clients/{{$cli->id}}" class="btn btn-info btn-sm">Afficher</a></li>
-                                            <li class="list-inline-item"><a href="/clients/edit/{{$cli->id}}" class="btn btn-warning btn-sm">Modifier</a></li>
+                                            <li class="list-inline-item"><a href="/clients/{{$cli->id}}" class="btn btn-outline-primary btn-sm">Afficher</a></li>
+                                            <li class="list-inline-item"><a href="/clients/edit/{{$cli->id}}" class="btn btn-outline-info btn-sm">Modifier</a></li>
                                         @if(!$cli->actif)
-                                            <li class="list-inline-item"><a href="/clients/open/{{$cli->id}}" class="btn btn-success btn-sm">A</a></li>
+                                            <li class="list-inline-item"><a href="/clients/open/{{$cli->id}}" class="btn btn-outline-success btn-sm">A</a></li>
                                         @else
-                                            <li class="list-inline-item"><a href="/clients/close/{{$cli->id}}" class="btn btn-danger btn-sm">D</a></li>    
+                                            <li class="list-inline-item"><a href="/clients/close/{{$cli->id}}" class="btn btn-outline-danger btn-sm">D</a></li>    
                                         @endif
                                         </ul>
                                         </td>               
@@ -39,3 +43,4 @@
                     <div>{{$client->links()}}</div>
        </div>             
     </div>
+@endsection
