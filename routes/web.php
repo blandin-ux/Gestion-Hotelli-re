@@ -107,3 +107,7 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
     Route::get('annuler-entree-stock/{id}', 'EntreeController@annuler')->middleware('auth');
     Route::post('entree-en-stock', 'EntreeController@store')->middleware('auth');
     //
+
+    // Route louka article
+    Route::get('/louka','ArticleController@louka')->middleware('auth');
+    // fin route

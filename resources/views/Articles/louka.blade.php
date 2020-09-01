@@ -11,7 +11,7 @@
     </form>
     <div class="container mt-4">
         <div>
-            <h2 class="text-center pb-3">TOUS LES ARTICLES</h2>
+            <h2 class="text-center pb-3">Résultats pour l'article {{$louka}}</h2>
         </div>
 
         <table class="table table-striped table-bordered">
@@ -69,6 +69,9 @@
         <div>
             <a href="/ajouter-article" class="btn btn-outline-secondary">Ajouter</a>
         </div>
+        @if(request()->input())
+            <h6 class="mt-2"> {{ $article->total() }} résultat(s) pour la recherche de {{$louka}} </h6>
+        @endif
     </div>
     <div class="d-flex justify-content-center">{{$article->links()}}</div>
 @endsection

@@ -114,4 +114,9 @@ class ArticleController extends Controller
         $article=Article::all();
         return view('Stocks/rupture')->with(compact('article'));
     }
+    public function louka(Request $request){
+        $louka = $request->louka;
+        $article = Article::where('name','like',"%$louka%")->paginate(5);
+        return view('Articles/louka')->with(compact('article','louka'));
+    }
 }
