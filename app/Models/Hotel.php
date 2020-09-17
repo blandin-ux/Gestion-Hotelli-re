@@ -12,4 +12,8 @@ class Hotel extends Model
     public function classe(){
         return $this->belongsTo('App\Models\Classe','classe_id');
     }
+
+    public function chambre(){
+        return $this->hasMany('App\Models\Chambre');
+    }
 }

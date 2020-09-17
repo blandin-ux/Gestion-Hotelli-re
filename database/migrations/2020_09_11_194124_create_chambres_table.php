@@ -17,6 +17,7 @@ class CreateChambresTable extends Migration
             $table->id();
             $table->string('telephone',20);
             $table->integer('hotel_id')->default(0);
+            $table->string('image_uri',100);
             $table->integer('categorie_id')->default(0);
             $table->timestamps();
         });

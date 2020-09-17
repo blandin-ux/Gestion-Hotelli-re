@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Modification de l'hôtel {{$hotel->name}} </title>
+    <title>Creation</title>
 </head>
 <body>
 
@@ -263,45 +263,38 @@
 <img src="{{asset('img/coco1.png')}}" alt="" class="mr-1">
 <div class="wrapper">
 <div class="inner">
-<form enctype="multipart/form-data" action="/hotels/update" method="POST" >
+<form enctype="multipart/form-data" action="/chambres" method="POST" >
 @csrf
-<input type="hidden" name="id" value="{{$hotel->id}}">
-<h3 class="text-center">Modification</h3>
+<h3 class="text-center mb-4">Nouvelle chambre</h3>
 <div class="form-row">
     <div class="form-wrapper">
-        <label for="">Nom *</label>
-        <input value="{{$hotel->name}}" type="text" class="form-control" name="name" placeholder="Nom de l'hôtel" required>
+        <select name="categorie_id" class="form-control" id="" required>
+            <option value="">Categorie</option>
+            @foreach($categories as $categorie)
+            <option value="{{$categorie->id}}"> {{$categorie->description}} </option>
+            @endforeach
+        </select>
     </div>
     <div class="form-wrapper">
-        <label for="">Télephone *</label>
-        <input value="{{$hotel->telephone}}" type="text" class="form-control" placeholder="Numéro de télephone" name="telephone" required>
+        <label for="">Phone</label>
+        <input type="text" class="form-control" placeholder="Numéro de télephone" name="telephone" required>
     </div>
 </div>
 <div class="form-row">
 <div class="form-wrapper">
-<label for="">Adresse *</label>
-<input value="{{$hotel->adresse}}" type="text" class="form-control" name="adresse" placeholder="Adresse de l'hôtel" id="dp1" required>
-</div>
-<div class="form-wrapper">
-<label for="">C.P.H *</label>
-<input value="{{$hotel->cph}}" type="text" class="form-control" name="cph" placeholder="Cph de l'hôtel" id="dp2" required>
+    <select class="form-control" name="hotel_id" id="" required>
+        <option value="">Hôtel</option>
+        @foreach($hotels as $hotel)
+        <option value="{{$hotel->id}}"> {{$hotel->name}} </option>
+        @endforeach
+    </select>
 </div>
 </div>
 <div class="form-row last">
     <div class="form-wrapper">
-       <label for="">Photo *</label>
-       <input value="{{$hotel->image_uri}}" name="image_uri" id="" type="file" class="form-control" required>
+       <label for="">Image *</label>
+       <input name="image_uri" id="" type="file" class="form-control" required>
     </div>
-    <div class="form-wrapper">
-        <label for="">Classe *</label>
-        <select name="classe_id" id="" type="text" class="form-control" required>
-  <option value="">étoile(s)</option>          
-  @foreach($classe as $kelassi)          
-  <option value="{{$kelassi->id}}"> {{$kelassi->etoile}} </option>
-  @endforeach
-</select>
-</div>
-
 <div class="form-wrapper">
 <i class="zmdi zmdi-chevron-down"></i>
 </div>
@@ -313,7 +306,7 @@
 </label>
 </div>
 <button data-text="En cours..." class="btn btn-outline-primary">
-<span>Modifier</span>
+<span>Envoyer</span>
 </button>
 </form>
 </div>
