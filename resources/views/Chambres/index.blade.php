@@ -76,7 +76,7 @@
       <h1>Toutes les chambres présentes</h1>
       <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
       <p>
-        <a href="/chambres/create" class="btn btn-primary">Ajouter une chambre</a>
+        <a href="/chambres/create" class="btn btn-outline-secondary btn-lg">Ajouter une chambre</a>
       </p>
     </div>
   </section>

@@ -10,6 +10,7 @@
 img{
     max-width: 40%;
     border-radius: 10pc 10pc 10pc 10pc; 
+    height:auto;
 }
 </style>
 <body>

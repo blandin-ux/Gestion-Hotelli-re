@@ -32,7 +32,13 @@
     font-size: 13px;
     margin: 0;
     color: #999; 
-    background-color: linen; }
+    background-color: black; 
+    background-image:url({{url('img/coco2.jpg')}}); 
+    background-repeat: none;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
 
     input, textarea, select {
     font-family: "Muli-Regular";
@@ -58,7 +64,7 @@
     .wrapper {
     min-height: 100vh;
     position: relative;
-    background: url("../images/bg-registration-form-9.jpg") no-repeat right center;
+    background:  url("../images/bg-registration-form-9.jpg") no-repeat right center;
     background-size: cover; }
 
     .inner {
@@ -78,20 +84,23 @@
     form {
     width: 100%;
     padding: 57px 46px 55px;
-    background: #fff; }
+    background: #fff; 
+    background: linear-gradient(grey,black,grey);
+    }
 
     select {
     -moz-appearance: none;
     -webkit-appearance: none;
-    cursor: pointer; }
+    cursor: pointer; 
+    }
 
     h3 {
-    text-transform: uppercase;
+    text-transform: ;
     font-size: 23px;
     font-family: "Poppins-Medium";
-    color: #3e91f7;
+    color: lightblue;
     letter-spacing: 3px;
-    margin-bottom: 22px;
+    margin-bottom: 28px;
     font-weight: 500; }
 
     .form-row {
@@ -249,23 +258,23 @@
         .form-row .form-wrapper:first-child {
             margin-right: 0; } }
     img{
-        position: relative;
         float: right;
         border-radius: 16pc 10pc 10pc 1pc;
-        height: 10pc;
+        height: auto;
         box-shadow: 0px 0px 20px;
+        max-width: 100%;
     }            
 
     /*# sourceMappingURL=style.css.map */
 </style>
 
 <body>
-<img src="{{asset('img/coco1.png')}}" alt="" class="mr-1">
+<img src="{{asset('img/coco1.png')}}" alt="Responsive image" class="img-fluid mr-1">
 <div class="wrapper">
 <div class="inner">
 <form enctype="multipart/form-data" action="/chambres" method="POST" >
 @csrf
-<h3 class="text-center mb-4">Nouvelle chambre</h3>
+<marquee behavior="" direction="left"><h3 class="text-center mb-4">Ajouter une nouvelle chambre dans la collection</h3></marquee>
 <div class="form-row">
     <div class="form-wrapper">
         <select name="categorie_id" class="form-control" id="" required>
@@ -293,7 +302,7 @@
 <div class="form-row last">
     <div class="form-wrapper">
        <label for="">Image *</label>
-       <input name="image_uri" id="" type="file" class="form-control" required>
+       <input name="image_uri" id="" type="file" class="" required>
     </div>
 <div class="form-wrapper">
 <i class="zmdi zmdi-chevron-down"></i>
@@ -305,7 +314,7 @@
 <span class="checkmark"></span>
 </label>
 </div>
-<button data-text="En cours..." class="btn btn-outline-primary">
+<button data-text="En cours..." class="btn btn-primary">
 <span>Envoyer</span>
 </button>
 </form>
