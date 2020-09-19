@@ -74,7 +74,7 @@ class TarifierController extends Controller
         //
         $categories = Categorie::all();
         $classes = Classe::all();
-        $tarifs = Tarifier::all();
+        $tarifs = Tarifier::find($id);
         return view('Tarifs/edit')->with(compact('tarifs','categories','classes')); 
     }
 

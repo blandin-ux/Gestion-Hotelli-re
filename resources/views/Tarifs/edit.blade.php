@@ -12,7 +12,7 @@
         @csrf
         <div class="row">
             <div class="col-md-4">    
-                <select class="form-control" name="categorie_id" id="">
+                <select class="form-control" name="categorie_id" id="" required>
                     <option value="">Categorie</option>
                     @foreach($categories as $categorie)
                     <option value="{{$categorie->id}}"> {{$categorie->description}} </option>
@@ -20,7 +20,7 @@
                 </select>
             </div> 
             <div class="col-md-4">    
-                <select class="form-control" name="classe_id" id="">
+                <select class="form-control" name="classe_id" id="" required>
                     <option value="">classe</option>
                     @foreach($classes as $classe)
                     <option value="{{$classe->id}}"> {{$classe->etoile}} </option>
@@ -28,10 +28,10 @@
                 </select>
             </div>    
             <div class="col-md-4">
-                @foreach($tarifs as $tarif)
-                <input type="hidden" name="id" value="{{$tarif->id}}">
-                <input value="{{$tarif->tarifUnitaire}}" type="text" class="form-control" name="tarifUnitaire" placeholder="Tarif Unitaire">
-                @endforeach
+                
+                <input type="hidden" name="id" value="{{$tarifs->id}}">
+                <input value="{{$tarifs->tarifUnitaire}}" type="text" class="form-control" name="tarifUnitaire" placeholder="Tarif Unitaire" required>
+                
             </div>
         </div>
         <div class="row mt-2">
