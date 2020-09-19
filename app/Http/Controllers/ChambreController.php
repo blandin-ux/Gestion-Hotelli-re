@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Chambre;
 use App\Models\Hotel;
 use App\Models\Categorie;
+use App\Models\Tarifier;
+
 class ChambreController extends Controller
 {
     /**

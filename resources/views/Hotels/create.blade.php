@@ -32,7 +32,7 @@
     font-size: 13px;
     margin: 0;
     color: #999; 
-    background-color: linen; }
+    background: linear-gradient(175deg, royalblue, transparent); }
 
     input, textarea, select {
     font-family: "Muli-Regular";
@@ -260,12 +260,12 @@
 </style>
 
 <body>
-<img src="{{asset('img/coco1.png')}}" alt="" class="mr-1">
+<img src="{{asset('img/coco1_.png')}}" alt="" class="mr-1">
 <div class="wrapper">
 <div class="inner">
 <form enctype="multipart/form-data" action="/hotels" method="POST" >
 @csrf
-<h3>Ajouter un nouvel hôtel</h3>
+<marquee behavior="" scrollamount="5" direction=""><h3>Ajouter un nouvel hôtel</h3></marquee>
 <div class="form-row">
     <div class="form-wrapper">
         <label for="">Nom *</label>

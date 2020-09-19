@@ -13,7 +13,7 @@ class Hotel extends Model
         return $this->belongsTo('App\Models\Classe','classe_id');
     }
 
-    public function chambre(){
+    public function chambres(){
         return $this->hasMany('App\Models\Chambre');
     }
 }

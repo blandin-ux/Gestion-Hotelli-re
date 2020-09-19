@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Tarifier;
+use App\Models\Classe;
 use App\Models\Categorie;
-class CategorieController extends Controller
+
+class TarifierController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +17,8 @@ class CategorieController extends Controller
     public function index()
     {
         //
-        $categories = Categorie::all();
-        return view('Categories/index')->with(compact('categories'));
+        $tarifs = Tarifier::all();
+        return view('Tarifs/index')->with(compact('tarifs'));
     }
 
     /**
@@ -27,8 +30,8 @@ class CategorieController extends Controller
     {
         //
         $categories = Categorie::all();
-        return view('Categories/create')->with(compact('categories'));
-
+        $classes = Classe::all();
+        return view('Tarifs/create')->with(compact('categories','classes'));
     }
 
     /**
@@ -40,11 +43,13 @@ class CategorieController extends Controller
     public function store(Request $request)
     {
         //
-        $categorie = new Categorie();
-        $categorie->description = $request->description;
-        //dd($categorie);
-        $categorie->save();
-        return redirect('/categories');
+        $tarif = new Tarifier();
+        $tarif->categorie_id = $request->categorie_id;
+        $tarif->classe_id = $request->classe_id;
+        $tarif->tarifUnitaire = $request->tarifUnitaire;
+        //dd($tarif);
+        $tarif->save();
+        return redirect('/tarifs');
     }
 
     /**
@@ -67,8 +72,10 @@ class CategorieController extends Controller
     public function edit($id)
     {
         //
-        $categorie = Categorie::find($id);
-        return view('Categories/edit')->with(compact('categorie'));
+        $categories = Categorie::all();
+        $classes = Classe::all();
+        $tarifs = Tarifier::all();
+        return view('Tarifs/edit')->with(compact('tarifs','categories','classes')); 
     }
 
     /**
@@ -81,11 +88,13 @@ class CategorieController extends Controller
     public function update(Request $request)
     {
         //
-        $categorie = Categorie::find($request->id);
-        $categorie->description = $request->description;
-        //dd($categorie);
-        $categorie->save();
-        return redirect('/categories');
+        $tarif = Tarifier::find($request->id);
+        $tarif->categorie_id = $request->categorie_id;
+        $tarif->classe_id = $request->classe_id;
+        $tarif->tarifUnitaire = $request->tarifUnitaire;
+        //dd($tarif);
+        $tarif->save();
+        return redirect('/tarifs');
     }
 
     /**

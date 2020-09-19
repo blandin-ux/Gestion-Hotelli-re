@@ -76,7 +76,7 @@
       <h1>Liste de tous les Hôtels</h1>
       <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
       <p>
-        <a href="/hotels/create" class="btn btn-primary">Ajouter un Hôtel</a>
+        <a href="/hotels/create" class="btn btn-primary btn-lg">Ajouter un Hôtel</a>
       </p>
     </div>
   </section>
@@ -87,7 +87,9 @@
         @foreach($hotels as $hotel)
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
+          <marquee direction="down" scrollamount="10" behavior="slide">
             <img src="{{asset($hotel->image_uri)}}" class="bd-placeholder-img card-img-top img-hotel" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder:"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em" class="ml-2">{{$hotel->name}}</text>
+          </marquee>
             <div class="card-body">
               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
               <span class="text-center d-flex font-weight-bolder mb-2"> {{$hotel->classe_id?$hotel->classe->etoile:"rien"}} </span>
@@ -96,7 +98,7 @@
                   <a href="hotels/{{$hotel->id}}" class="btn btn-sm btn-outline-secondary">Voir+</a>
                   <a href="/hotels/{{$hotel->id}}/edit" class="btn btn-sm btn-outline-secondary">Edit</a>
                 </div>
-                <small class="text-muted">9 mins</small>
+                <small class="text-muted">Ajouter le {{$hotel->created_at->format("d/m/y")}}  à : {{$hotel->created_at->format("H:m:s")}} </small>
               </div>
             </div>
           </div>
@@ -105,7 +107,7 @@
       </div>
     </div>
   </div>
-
+  
 </main>
 
 <footer class="text-muted">

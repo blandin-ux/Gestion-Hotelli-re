@@ -39,10 +39,16 @@ Route::post('/clients/update','ClientController@update');
 
 //GESTION DES CATEGORIES
 Route::resource('/categories','CategorieController');
+Route::post('/categories/update','CategorieController@update');
 //Fin catégories
 
 //Gestion des chambres
 Route::resource('/chambres','ChambreController');
 Route::post('/chambres/update','ChambreController@update');
-//
+//Fin chambres
+
+//Gestion des Tarifs
+Route::resource('/tarifs','TarifierController');
+Route::post('/tarifs/update','TarifierController@update');
+//Fin Tarifs
     
