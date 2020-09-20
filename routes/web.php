@@ -14,8 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('FrontOffice/welcome');
 });
+
+Route::get('/chambres','FrontofficeController@chambre');
+
 route::get('/deconnexion','Auth\CustomLogController@deconnecter')->middleware('auth');
 Auth::routes();
 // routes pour la gestion des clients
@@ -32,22 +35,22 @@ Route::post('/hotels','HotelController@store');
 Route::post('/hotels/update','HotelController@update');
 //fin hotels
 
-//route client
+//route client Terminée
 Route::resource('/clients','ClientController');
 Route::post('/clients/update','ClientController@update');
 //fin catégorie
 
-//GESTION DES CATEGORIES
+//GESTION DES CATEGORIES Terminée
 Route::resource('/categories','CategorieController');
 Route::post('/categories/update','CategorieController@update');
 //Fin catégories
 
-//Gestion des chambres
+//Gestion des chambres Terminée
 Route::resource('/chambres','ChambreController');
 Route::post('/chambres/update','ChambreController@update');
 //Fin chambres
 
-//Gestion des Tarifs
+//Gestion des Tarifs Terminée
 Route::resource('/tarifs','TarifierController');
 Route::post('/tarifs/update','TarifierController@update');
 //Fin Tarifs

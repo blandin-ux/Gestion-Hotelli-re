@@ -1,9 +1,0 @@
-.flex-container{
-    display: flex ;
-    justify-content: space-evenly;
-}
-.add-entree{
-    float: right;
-    margin-right: 7px;
-    margin-bottom: 14px;
-}
