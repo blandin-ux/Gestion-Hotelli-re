@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <h6 class="text-center">Liste de tous les tarifs repartis celon les catégories et classes des hôtels</h6>
+        <h6 class="text-center">Liste de tous les tarifs repartis selon les catégories et classes des hôtels</h6>
         <table class="table table-hover">
             <thead>
                 <tr>

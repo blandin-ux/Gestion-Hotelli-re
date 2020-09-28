@@ -282,11 +282,20 @@
     </div>
 </div>
 <div class="form-row">
-<div class="form-wrapper">
+    <div class="form-wrapper">
     <select class="form-control" name="hotel_id" id="" required>
         <option value="">Hôtel</option>
         @foreach($hotels as $hotel)
         <option value="{{$hotel->id}}"> {{$hotel->name}} </option>
+        @endforeach
+    </select>
+</div>
+<div class="form-row">
+    <div class="form-wrapper col-md-12">
+    <select class="form-control" name="tarifier_id" id="" required>
+        <option value="">Prix</option>
+        @foreach($tarifiers as $tarifier)
+        <option value="{{$tarifier->id}}"> {{$tarifier->tarifUnitaire}} Frcfa </option>
         @endforeach
     </select>
 </div>

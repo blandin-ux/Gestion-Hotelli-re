@@ -153,4 +153,13 @@ class HotelController extends Controller
     {
         //
     }
+
+    public function sossa(Request $request)
+    {
+        //
+        $sossa = $request->sossa;
+        $hotels = Hotel::where('name','like',"%$sossa%");
+        //dd($hotels);
+        return view('FrontOffice/sossa')->with(compact('hotels','sossa'));
+    }
 }

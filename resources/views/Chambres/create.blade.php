@@ -276,7 +276,7 @@
 @csrf
 <marquee behavior="" direction="left"><h3 class="text-center mb-4">Ajouter une nouvelle chambre dans la collection</h3></marquee>
 <div class="form-row">
-    <div class="form-wrapper">
+    <div class="form-wrapper col-md-4">
         <select name="categorie_id" class="form-control" id="" required>
             <option value="">Categorie</option>
             @foreach($categories as $categorie)
@@ -290,7 +290,7 @@
     </div>
 </div>
 <div class="form-row">
-<div class="form-wrapper">
+    <div class="form-wrapper">
     <select class="form-control" name="hotel_id" id="" required>
         <option value="">Hôtel</option>
         @foreach($hotels as $hotel)
@@ -298,9 +298,18 @@
         @endforeach
     </select>
 </div>
+<div class="form-row">
+    <div class="form-wrapper col-md-12">
+    <select class="form-control" name="tarifier_id" id="" required>
+        <option value="">Prix</option>
+        @foreach($tarifiers as $tarifier)
+        <option value="{{$tarifier->id}}"> {{$tarifier->tarifUnitaire}} Frcfa </option>
+        @endforeach
+    </select>
+</div>
 </div>
 <div class="form-row last">
-    <div class="form-wrapper">
+    <div class="form-wrapper col-md-4">
        <label for="">Image *</label>
        <input name="image_uri" id="" type="file" class="" required>
     </div>

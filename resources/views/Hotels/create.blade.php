@@ -267,31 +267,31 @@
 @csrf
 <marquee behavior="" scrollamount="5" direction=""><h3>Ajouter un nouvel hôtel</h3></marquee>
 <div class="form-row">
-    <div class="form-wrapper">
+    <div class="form-wrapper col-md-5">
         <label for="">Nom *</label>
         <input type="text" class="form-control" name="name" placeholder="Nom de l'hôtel" required>
     </div>
-    <div class="form-wrapper">
+    <div class="form-wrapper col-md-5">
         <label for="">Télephone *</label>
         <input type="text" class="form-control" placeholder="Numéro de télephone" name="telephone" required>
     </div>
 </div>
 <div class="form-row">
-<div class="form-wrapper">
+<div class="form-wrapper col-md-5">
 <label for="">Adresse *</label>
 <input type="text" class="form-control" name="adresse" placeholder="Adresse de l'hôtel" id="dp1" required>
 </div>
-<div class="form-wrapper">
+<div class="form-wrapper col-md-5">
 <label for="">C.P.H *</label>
 <input type="text" class="form-control" name="cph" placeholder="Cph de l'hôtel" id="dp2" required>
 </div>
 </div>
 <div class="form-row last">
-    <div class="form-wrapper">
+    <div class="form-wrapper col-md-5 mb-2">
        <label for="">Photo *</label>
-       <input name="image_uri" id="" type="file" class="form-control" required>
+       <input name="image_uri" id="" type="file" class="" required>
     </div>
-    <div class="form-wrapper">
+    <div class="form-wrapper col-md-7">
         <label for="">Classe *</label>
         <select name="classe_id" id="" type="text" class="form-control" required>
   <option value="">étoile(s)</option>          

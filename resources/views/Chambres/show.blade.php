@@ -22,15 +22,16 @@ img{
                     <th>Appartenant à l'Hôtel</th>
                     <th>Appartenat à la catégorie</th>
                     <th>NuméroT</th>
+                    <th>Prix</th>
                 </tr>
                 <tr>
                     <td>{{$chambre->hotel_id?$chambre->hotel->name:""}}</td>
                     <td> {{$chambre->categorie_id?$chambre->categorie->description:""}} </td>
                     <td>{{$chambre->telephone}}</td>
+                    <td> {{$chambre->tarifier_id?$chambre->tarifier->tarifUnitaire:"Aucun prix"}} Fcfa/Jour(s) </td>
                 </tr>    
             </thead>
         </table>
-        <a href="{{$chambre->id}}/edit" class="btn btn-outline-warning btn-sm">Modifier</a>
     </div>
 </body>
 </html>

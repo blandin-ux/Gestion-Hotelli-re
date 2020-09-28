@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+use App\Models\Hotel;
+use App\Models\Chambre;
+use App\Models\Reservation;
+
 class FrontofficeController extends Controller
 {
     /**
@@ -11,10 +16,24 @@ class FrontofficeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function index(){
+        $hotels = Hotel::all();
+        return view('FrontOffice/welcome')->with(compact('hotels'));
+    }
+
     public function chambre()
     {
         //
-        return view('FrontOffice/chambre');
+        $chambres = Chambre::orderBy('id')->where('actif',1)->paginate(6);
+        return view('FrontOffice/chambre')->with(compact('chambres'));
+    }
+
+    public function show($id)
+    {
+        //
+        $chambre = Chambre::find($id);
+        return view('Chambres/show')->with(compact('chambre'));
     }
 
     /**
@@ -22,9 +41,10 @@ class FrontofficeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function contact()
     {
         //
+        return view('FrontOffice/contact');
     }
 
     /**
@@ -33,9 +53,10 @@ class FrontofficeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function apropos()
     {
         //
+        return view('FrontOffice/apropos');
     }
 
     /**
@@ -44,9 +65,10 @@ class FrontofficeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function blog()
     {
         //
+        return view('FrontOffice/blog');
     }
 
     /**
@@ -55,9 +77,10 @@ class FrontofficeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function chambreDetail()
     {
         //
+        return view('FrontOffice/chambreDetail');
     }
 
     /**
@@ -67,9 +90,10 @@ class FrontofficeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function blogDetail()
     {
         //
+        return view('FrontOffice/blogDetail');
     }
 
     /**
@@ -78,8 +102,30 @@ class FrontofficeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function sossa(Request $request)
     {
         //
+        $sossa = $request->sossa;
+        $hotels = Hotel::where('name','like',"%$sossa%");
+        //dd($hotels);
+        return view('FrontOffice/sossa')->with(compact('hotels','sossa'));
+    }
+    
+    public function reserver($id){
+        //
+        $chambre = Chambre::find($id);
+        return view('FrontOffice/reserver')->with((compact('chambre')));
+    }
+
+    public function reserverClient(Request $request){
+        $reservation = new Reservation();
+        $reservation->name = $request->name;
+        $reservation->entree = $request->entree;
+        $reservation->sortie = $request->sortie;
+        $reservation->telephone = $request->telephone;
+        $reservation->chambre_id = $request->chambre_id;
+        dd($reservation);
+        $reservation->save();
+        return view('FrontOffice/message')->with(compact('reservation'));
     }
 }

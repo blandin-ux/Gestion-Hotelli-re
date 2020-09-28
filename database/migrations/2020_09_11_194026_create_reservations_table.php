@@ -15,10 +15,13 @@ class CreateReservationsTable extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
-            $table->string('datePayeArrhes',50);
-            $table->integer('MontantArrhes')->default(0);
+            $table->string('name',100);
+            $table->string('entree',25);
+            $table->string('sortie',25);
+            $table->integer('montant')->default(0);
             $table->integer('chambre_id')->default(0);
-            $table->integer('client_id')->default(0);
+            $table->boolean('valider')->default(0);
+            $table->string('telephone',25)->default(0);
             $table->timestamps();
         });
     }

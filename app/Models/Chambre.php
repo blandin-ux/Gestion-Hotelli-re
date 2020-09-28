@@ -14,4 +14,12 @@ class Chambre extends Model
     public function categorie(){
         return $this->belongsTo('App\Models\categorie');
     }
+
+    public function tarifier(){
+        return $this->belongsTo('App\Models\Tarifier','tarifier_id');
+    }
+    
+    public function reservation(){
+        return $this->belongsTo('App\Models\Reservation');
+    }
 }

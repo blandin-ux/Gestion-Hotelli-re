@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -7,17 +7,43 @@
     <meta name="keywords" content="Hiroto, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Page d'acceuil</title>
+    <title>@yield('titre')</title>
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('css/elegant-icons.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('css/nice-select.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('css/jquery-ui.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('css/slicknav.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}" type="text/css">
+
+    <link href="../assets/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="album.css" rel="stylesheet">
+<style>
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+  .tete{
+    height:90px;
+  }
+  
+  section.jumbotron.text-center{
+      background-color: aliceblue;
+  }
+</style>
 </head>
 
 <body>
@@ -30,7 +56,7 @@
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
         <div class="offcanvas__logo">
-            <a href="/"><img src="img/logo.png" alt=""></a>
+            <a href="/"><img src="{{asset('img/logo.png')}}" alt=""></a>
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__btn__widget">
@@ -43,7 +69,7 @@
             </ul>
         </div>
         <div class="offcanvas__language">
-            <img src="img/lan.png" alt="">
+            <img src="{{asset('img/lan.png')}}" alt="">
             <span>English</span>
             <i class="fa fa-angle-down"></i>
             <ul>
@@ -80,7 +106,7 @@
                                 </ul>
                             </div>
                             <div class="header__top__language">
-                                <img src="img/lan.png" alt="">
+                                <img src="{{asset('img/lan.png')}}" alt="">
                                 <span>English</span>
                                 <i class="fa fa-angle-down"></i>
                                 <ul>
@@ -134,52 +160,16 @@
     <!-- Fin de la section header -->
 
     <!-- Hero Section Begin -->
-    <section class="hero spad set-bg" data-setbg="img/hero.jpg">
+    <section class="hero spad set-bg" data-setbg="{{asset('img/hero.jpg')}}">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="hero__text">
-                        <marquee behavior="" scrollamount="10" direction="left"><h5>Es tu à la recherche d'un hôtel ??? si oui, la plate-forme Lc<i class="fa fa-home"></i> est là pour toi !</h5></marquee>
-                        <h2>Cherches <i class="fa fa-search"></i> ton hôtel puis fais ta réservation...!.</h2>
+                        <marquee behavior="" scrollamount="10" direction="left"><h5>@yield('textcli')</h5></marquee>
+                        <h2> @yield('hero') </h2>
                     </div>
                     <!-- Recherches ton Hôtel-->
-                    <form action="frontOffice/sossa" method="get" class="filter__form">
-                        <div class="filter__form__item filter__form__item--search">
-                            <p>Hôtel</p>
-                            <div class="filter__form__input">
-                                <input name="sossa" type="text" placeholder="Taper le nom de l'hôtel" required>
-                                <span class="icon_search"></span>
-                            </div>
-                        </div>
-                        <div class="filter__form__item">
-                            <p>Entrée_#</p>
-                            <div class="filter__form__datepicker">
-                                <span class="icon_calendar"></span>
-                                <input type="text" class="datepicker_pop check__in">
-                                <i class="arrow_carrot-down"></i>
-                            </div>
-                        </div>
-                        <div class="filter__form__item">
-                            <p>Sortie_#</p>
-                            <div class="filter__form__datepicker">
-                                <span class="icon_calendar"></span>
-                                <input type="text" class="datepicker_pop check__out">
-                                <i class="arrow_carrot-down"></i>
-                            </div>
-                        </div>
-                        <div class="filter__form__item filter__form__item--select">
-                            <p>Est tu un ?</p>
-                            <div class="filter__form__select">
-                                <span class="icon_group"></span>
-                                <select>
-                                    <option value=""> Adulte</option>
-                                    <option value=""> Ado</option>
-                                    <option value=""> Enfant</option>
-                                </select>
-                            </div>
-                        </div>
-                        <button type="submit">Rechercher</button>
-                    </form>
+                    @yield('barreRecherche')
                     <!-- Fin recherches ton Hôtel-->
                 </div>
             </div>
@@ -188,30 +178,9 @@
     <!-- Hero Section End -->
 
     <!-- A propos  -->
-    <section class="home-about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="home__about__text">
-                        <div class="section-title">
-                            <h5>Apropos de nous</h5>
-                            <h2>Bienvenue sur la Lc Plate-Forme ! <i class="fa fa-home"></i></h2>
-                        </div>
-                        <p class="first-para">La Lc plate-forme a été conçu par un groupe de dévélopeurs dans le but de faciliter des réservations des
-                        chambres d'hôtels disponibles de la place, elle a plusieurs services qu'elle offre.</p>
-                        <p class="last-para">Parmit ces services, elle dispose d'un service de localisation qui permet à la personne de manière à ce qu'elle soit orientée au cas 
-                            ou cette dernière n'a pas opté faire une réservation en ligne .</p>
-                        <img src="img/home-about/sign.png" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="home__about__pic">
-                        <img src="img/home-about/home-about.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="container">
+       @yield('sossa')
+</div>   
     <!-- Fin A propos -->
 
     <!-- Debut de la section des services -->
@@ -221,7 +190,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="services__item">
-                        <img src="img/services/services-1.png" alt="">
+                        <img src="{{asset('img/services/services-1.png')}}" alt="">
                         <h4>Free Wi-Fi</h4>
                         <p>The massive investment in a hotel or resort requires constant reviews and control in order to
                             make it a successful investment.</p>
@@ -229,7 +198,7 @@
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="services__item">
-                        <img src="img/services/services-2.png" alt="">
+                        <img src="{{asset('img/services/services-2.png')}}" alt="">
                         <h4>Premium Pool</h4>
                         <p>Choose from 4 unique ready made concepts, let us help you create the concept perfect for you
                             or let HCA.</p>
@@ -245,7 +214,7 @@
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="services__item">
-                        <img src="img/services/services-4.png" alt="">
+                        <img src="{{asset('img/services/services-4.png')}}" alt="">
                         <h4>Bar Wine</h4>
                         <p>For properties with third party management companies, HCA Consultants will as well administer
                             the terms and conditions.</p>
@@ -261,7 +230,7 @@
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="services__item">
-                        <img src="img/services/services-6.png" alt="">
+                        <img src="{{asset('img/services/services-6.png')}}" alt="">
                         <h4>Restaurant</h4>
                         <p>A hotel and restaurant investment deserves careful and market oriented financial planning and
                             projections.</p>
@@ -274,43 +243,7 @@
 
     <!-- Debut de la section tous les hôtels -->
     <section class="home-room spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h5>Hôtels <i class="fa fa-home"></i></h5>
-                        <h2>Tous les hôtels de la place disponibles !</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid testimonial__slider owl-carousel">
-            <div class="row">
-            @foreach($hotels as $hotel)
-                <div class="col-lg-3 col-md-6 col-sm-6 p-0">
-                    <div class="home__room__item set-bg" data-setbg="{{asset($hotel->image_uri)}}">
-                        <div class="home__room__title">
-                            <h4> {{$hotel->name}} <sup> </sup> </h4>
-                            <h2><span> Hôtel de classe {{$hotel->classe_id?$hotel->classe->etoile:""}} </span></h2>
-                        </div>
-                        <a href="#">Voir+ de détails</a>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-        </div>
-        <div class="container">
-            <div class="home__explore">
-                <div class="row">
-                    <div class="col-lg-9 col-md-8">
-                        <h3>Planning your next trip? Save up to 25% on your hotel</h3>
-                    </div>
-                    <div class="col-lg-3 col-md-4 text-center">
-                        <a href="#" class="primary-btn">Explorer More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </section>
     <!-- Fin de la section -->
 
@@ -320,7 +253,7 @@
             <div class="row">
                 <div class="col-lg-5">
                     <div class="testimonial__pic">
-                        <img src="img/testimonial-left.jpg" alt="">
+                        <img src="{{asset('img/testimonial-left.jpg')}}" alt="">
                     </div>
                 </div>
                 <div class="col-lg-7">
@@ -467,7 +400,7 @@
     <!-- Testimonial Section End -->
 
     <!-- Chooseus Section Begin -->
-    <div class="chooseus spad set-bg" data-setbg="img/chooseus-bg.jpg">
+    <div class="chooseus spad set-bg" data-setbg="{{asset('img/chooseus-bg.jpg')}}">
         <div class="container">
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-8 text-center">
@@ -506,10 +439,10 @@
             </div>
         </div>
         <div class="gallery__slider owl-carousel">
-            <div class="gallery__item small__item set-bg" data-setbg="img/gallery/gallery-1.jpg"></div>
-            <div class="gallery__item set-bg" data-setbg="img/gallery/gallery-2.jpg"></div>
-            <div class="gallery__item set-bg" data-setbg="img/gallery/gallery-3.jpg"></div>
-            <div class="gallery__item set-bg" data-setbg="img/gallery/gallery-4.jpg"></div>
+            <div class="gallery__item small__item set-bg" data-setbg="{{asset('img/gallery/gallery-1.jpg')}}"></div>
+            <div class="gallery__item set-bg" data-setbg="{{asset('img/gallery/gallery-2.jpg')}}"></div>
+            <div class="gallery__item set-bg" data-setbg="{{asset('img/gallery/gallery-3.jpg')}}"></div>
+            <div class="gallery__item set-bg" data-setbg="{{asset('img/gallery/gallery-4.jpg')}}"></div>
         </div>
     </section>
     <!-- Gallery Section End -->
@@ -527,7 +460,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-3 p-0 order-lg-1 col-md-6 order-md-1">
-                    <div class="latest__blog__pic set-bg" data-setbg="img/latest-blog/lb-1.jpg"></div>
+                    <div class="latest__blog__pic set-bg" data-setbg="{{asset('img/latest-blog/lb-1.jpg')}}"></div>
                 </div>
                 <div class="col-lg-3 p-0 order-lg-2 col-md-6 order-md-2">
                     <div class="latest__blog__text">
@@ -538,7 +471,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 p-0 order-lg-3 col-md-6 order-md-4">
-                    <div class="latest__blog__pic set-bg" data-setbg="img/latest-blog/lb-2.jpg"></div>
+                    <div class="latest__blog__pic set-bg" data-setbg="{{asset('img/latest-blog/lb-2.jpg')}}"></div>
                 </div>
                 <div class="col-lg-3 p-0 order-lg-4 col-md-6 order-md-3">
                     <div class="latest__blog__text">
@@ -550,7 +483,7 @@
                 </div>
                 <div class="col-lg-3 p-0 order-lg-6 col-md-6 order-md-5">
                     <div class="latest__blog__pic latest__blog__pic__last__row set-bg"
-                        data-setbg="img/latest-blog/lb-3.jpg"></div>
+                        data-setbg="{{asset('img/latest-blog/lb-3.jpg')}}"></div>
                 </div>
                 <div class="col-lg-3 p-0 order-lg-5 col-md-6 order-md-6">
                     <div class="latest__blog__text">
@@ -562,7 +495,7 @@
                 </div>
                 <div class="col-lg-3 p-0 order-lg-8 col-md-6 order-md-8">
                     <div class="latest__blog__pic latest__blog__pic__last__row set-bg"
-                        data-setbg="img/latest-blog/lb-4.jpg"></div>
+                        data-setbg="{{('img/latest-blog/lb-4.jpg')}}"></div>
                 </div>
                 <div class="col-lg-3 p-0 order-lg-7 col-md-6 order-md-7">
                     <div class="latest__blog__text">
@@ -578,25 +511,25 @@
     <!-- Latest Blog Section End -->
 
     <!-- Footer Section Begin -->
-    <footer class="footer set-bg" data-setbg="img/footer-bg.jpg">
+    <footer class="footer set-bg" data-setbg="{{asset('img/footer-bg.jpg')}}">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="logo__carousel owl-carousel">
                         <div class="logo__carousel__item">
-                            <a href="#"><img src="img/logo/logo-1.png" alt=""></a>
+                            <a href="#"><img src="{{asset('img/logo/logo-1.png')}}" alt=""></a>
                         </div>
                         <div class="logo__carousel__item">
-                            <a href="#"><img src="img/logo/logo-2.png" alt=""></a>
+                            <a href="#"><img src="{{asset('img/logo/logo-2.png')}}" alt=""></a>
                         </div>
                         <div class="logo__carousel__item">
-                            <a href="#"><img src="img/logo/logo-3.png" alt=""></a>
+                            <a href="#"><img src="{{asset('img/logo/logo-3.png')}}" alt=""></a>
                         </div>
                         <div class="logo__carousel__item">
-                            <a href="#"><img src="img/logo/logo-4.png" alt=""></a>
+                            <a href="#"><img src="{{asset('img/logo/logo-4.png')}}" alt=""></a>
                         </div>
                         <div class="logo__carousel__item">
-                            <a href="#"><img src="img/logo/logo-5.png" alt=""></a>
+                            <a href="#"><img src="{{asset('img/logo/logo-5.png')}}" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -608,7 +541,7 @@
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="footer__about">
                             <div class="footer__logo">
-                                <a href="#"><img src="img/logo.png" alt=""></a>
+                                <a href="#"><img src="{{asset('img/logo.png')}}" alt=""></a>
                             </div>
                             <h4>(123) 456-78-91096</h4>
                             <ul>
@@ -682,14 +615,15 @@
         </div>
     </footer>
     <!-- Footer Section End -->
+
     <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('js/jquery.nice-select.min.js')}}"></script>
+    <script src="{{asset('js/jquery-ui.min.js')}}"></script>
+    <script src="{{asset('js/jquery.slicknav.js')}}"></script>
+    <script src="{{asset('js/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('js/main.js')}}"></script>
 </body>
 
 </html>

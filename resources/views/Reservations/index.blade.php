@@ -73,45 +73,31 @@
 
   <section class="jumbotron text-center">
     <div class="container">
-      <h1>Toutes les chambres présentes</h1>
+      <h1>Toutes les chambres résevées</h1>
       <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
-      <p>
-        <a href="/chambres/create" class="btn btn-outline-secondary btn-lg mt-1">Ajouter une chambre</a>
-        <a href="/reservations" class="btn btn-outline-primary btn-lg mt-1">Chambre réservée(s)</a>
-      </p>
     </div>
   </section>
 
-  <div class="album py-5 bg-light">
-    <div class="container">
-      <div class="row">
-        @foreach($chambres as $chambre)
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <marquee behavior="slide" scrollamount="40" direction=""><img src="{{asset($chambre->image_uri)}}" class="bd-placeholder-img card-img-top img-hotel" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder:"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em" class="ml-2">{{$chambre->name}}</text></marquee>
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <span class="text-center d-flex font-weight-bolder mb-2">  </span>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="chambres/{{$chambre->id}}" class="btn btn-sm btn-outline-secondary">Voir+</a>
-                  <a href="/chambres/{{$chambre->id}}/edit" class="btn btn-sm btn-outline-secondary">Edit</a>
-                </div>
-                <small class="text-muted">Ajouter le {{$chambre->created_at->format("d/m/y")}}  à : {{$chambre->created_at->format("H:m:s")}}</small>
-              </div>
-            </div>
-            @if($chambre->actif==1)
-            <span class="badge badge-success ml-1 col-md-4 mx-auto d-block mb-2">Disponible !</span> 
-            @else
-            <span class="badge badge-danger ml-1 col-md-4 mx-auto d-block mb-2">Indisponible..!</span>
-            @endif
-          </div>
-        </div>
-        @endforeach
-        <div class="d-flex mx-auto">{{ $chambres->links() }}</div>
+      <div class="container mt-5">
+        <table class="table table-hover table-sm">
+            <thead>
+                <tr>
+                    <th class="text-center">N° reservation</th>
+                    <th class="">Option</th>
+                </tr>    
+            </thead>
+            <tbody>
+                @foreach($reservations as $reservation)
+                <tr>
+                    <td class="text-center"> Res_{{$reservation->id}}_# </td>
+                    <td> <a href="/reservations/{{$reservation->id}}" class="btn btn-outline-info btn-sm">Ouvrir</a> </td>
+                </tr>
+                @endforeach
+                <div class="d-flex mx-auto"> {{$reservations->links()}} </div>
+            </tbody>
+        </table>
       </div>
-    </div>
-  </div>
+
 </main>
 
 <footer class="text-muted">

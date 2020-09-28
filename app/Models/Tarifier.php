@@ -14,4 +14,5 @@ class Tarifier extends Model
     public function classe(){
         return $this->belongsTo('App\Models\Classe');
     }
+
 }

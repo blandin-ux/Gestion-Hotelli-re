@@ -17,7 +17,18 @@ Route::get('/', function () {
     return view('FrontOffice/welcome');
 });
 
-Route::get('/chambres','FrontofficeController@chambre');
+// route du frontOffice
+Route::get('/','FrontofficeController@index');
+Route::get('/frontOffice/chambres','FrontofficeController@chambre');
+Route::get('/contacts','FrontofficeController@contact');
+Route::get('/apropos','FrontofficeController@apropos');
+Route::get('/blogs','FrontofficeController@blog');
+Route::get('/chambreDetails','FrontofficeController@chambreDetail');
+Route::get('/blogDetails','FrontofficeController@blogDetail');
+Route::get('/frontOffice/sossa','FrontofficeController@sossa');
+Route::get('/chambres/{id}/reserver','FrontofficeController@reserver');
+Route::post('/reserver','FrontofficeController@reserverClient');
+// fin du frontOffice
 
 route::get('/deconnexion','Auth\CustomLogController@deconnecter')->middleware('auth');
 Auth::routes();
@@ -48,10 +59,15 @@ Route::post('/categories/update','CategorieController@update');
 //Gestion des chambres Terminée
 Route::resource('/chambres','ChambreController');
 Route::post('/chambres/update','ChambreController@update');
+Route::get('/chambres/{id}/open','ChambreController@open');
+Route::get('/chambres/{id}/close','ChambreController@close');
 //Fin chambres
 
 //Gestion des Tarifs Terminée
 Route::resource('/tarifs','TarifierController');
 Route::post('/tarifs/update','TarifierController@update');
 //Fin Tarifs
-    
+
+//Gestion des chambres réservées
+Route::resource('/reservations','ReservationController');
+//Fin réservation

@@ -7,6 +7,7 @@ use App\Models\Chambre;
 use App\Models\Hotel;
 use App\Models\Categorie;
 use App\Models\Tarifier;
+use App\Models\Reservation;
 
 class ChambreController extends Controller
 {
@@ -18,8 +19,9 @@ class ChambreController extends Controller
     public function index()
     {
         //
-        $chambres = Chambre::all();
-        return view('Chambres/index')->with(compact('chambres'));
+        $chambres = Chambre::orderBy('id')->paginate(6);
+        $reservations = Reservation::all();
+        return view('Chambres/index')->with(compact('chambres','reservations'));
     }
 
     /**
@@ -32,7 +34,8 @@ class ChambreController extends Controller
         //
         $hotels = Hotel::all();
         $categories = Categorie::all();
-        return view('Chambres/create')->with(compact('hotels','categories'));
+        $tarifiers = Tarifier::all();
+        return view('Chambres/create')->with(compact('hotels','categories','tarifiers'));
     }
 
     /**
@@ -48,6 +51,7 @@ class ChambreController extends Controller
         $chambre->categorie_id = $request->categorie_id;
         $chambre->hotel_id = $request->hotel_id;
         $chambre->telephone = $request->telephone;
+        $chambre->tarifier_id = $request->tarifier_id;
         
         if($request->image_uri){
             $fichier = $request->image_uri;
@@ -66,7 +70,7 @@ class ChambreController extends Controller
                 $path = 'img/chambres/'. $name;
                 $fichier->move(public_path('img/chambres'),$name);
                 $chambre->image_uri = $path;
-                //dd($chambre);
+                dd($chambre);
             }
         }
         //dd('ext not ok');
@@ -100,7 +104,8 @@ class ChambreController extends Controller
         $chambre = Chambre::find($id);
         $categories = Categorie::all();
         $hotels = Hotel::all();
-        return view('Chambres/edit')->with(compact('chambre','categories','hotels'));
+        $tarifiers = Tarifier::all();
+        return view('Chambres/edit')->with(compact('chambre','categories','hotels','tarifiers'));
     }
 
     /**
@@ -117,7 +122,8 @@ class ChambreController extends Controller
         $chambre->categorie_id = $request->categorie_id;
         $chambre->hotel_id = $request->hotel_id;
         $chambre->telephone = $request->telephone;
-        
+        $chambre->tarifier_id = $request->tarifier_id;
+
         if($request->image_uri){
             $fichier = $request->image_uri;
             $ext_array= ['png','jpg','jpeg','gif'];
