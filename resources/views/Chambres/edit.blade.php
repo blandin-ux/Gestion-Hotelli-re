@@ -260,7 +260,7 @@
 </style>
 
 <body>
-<img src="{{asset('img/coco1.png')}}" alt="" class="mr-1">
+<img src="{{asset($chambre->image_uri)}}" alt="" class="mr-1">
 <div class="wrapper">
 <div class="inner">
 <form enctype="multipart/form-data" action="/chambres/update" method="POST" >

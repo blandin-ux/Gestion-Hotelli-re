@@ -24,8 +24,15 @@ img{
           font-size: 3.5rem;
         }
       }
+.nameh{
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-weight: 800;
+  font-family: cursive;
+}
 </style>
 <body>
+<p class="text-center nameh"> {{$hotel->name}} </p>
 <img src="{{asset($hotel->image_uri)}}"  alt="" srcset="" class="mx-auto d-block mt-2 mb-2 img">
     <div class="container">
         <table class="table hover">
@@ -63,8 +70,7 @@ img{
               <span class="text-center d-flex font-weight-bolder mb-2">  </span>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <a href="hotels/{{$chambre->id}}" class="btn btn-sm btn-outline-secondary">Voir+</a>
-                  <a href="/hotels/{{$chambre->id}}/edit" class="btn btn-sm btn-outline-secondary">Edit</a>
+
                 </div>
                 <small class="text-muted">Ajouter le {{$chambre->created_at->format("d/m/y")}}  à : {{$chambre->created_at->format("H:m:s")}} </small>
               </div>
@@ -78,3 +84,12 @@ img{
             
 </body>
 </html>
+<script src="{{asset('js/jquery.js')}}"></script>
+<script  src="{{asset('js/jquery.arctext.js')}}"></script>
+<script>
+  $(document).ready(function () {
+    $('.nameh').arctext({radius:600, rotate:false});
+  });
+   
+
+</script>

@@ -15,6 +15,9 @@ img{
 </style>
 <body>
 <img src="{{asset($chambre->image_uri)}}"  alt="" srcset="" class="mx-auto d-block mt-2 mb-2">
+<input type="hidden" name="categorie_id" value="{{$chambre->categorie_id}}">
+<input type="hidden" name="tarifier_id" value="tarifier_id">
+<input type="hidden" name="hotel_id" value="hotel_id">
     <div class="container">
         <table class="table hover">
             <thead>
@@ -32,6 +35,7 @@ img{
                 </tr>    
             </thead>
         </table>
+        <marquee behavior="" direction=""> <p class="text-left"> <i>L'hôtel se trouve au quartier <b>{{$chambre->hotel_id?$chambre->hotel->adresse:""}}</b> </i> et a pour N° de téléphone : <b>+242{{$chambre->hotel_id?$chambre->hotel->telephone:""}}</b> Merci ! </p></marquee>
     </div>
 </body>
 </html>

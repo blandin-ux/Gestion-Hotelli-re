@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Reservation;
-use App\Models\Chambre;
+use App\Models\Consommation;
 
-class ReservationController extends Controller
+class ConsommationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +15,8 @@ class ReservationController extends Controller
     public function index()
     {
         //
-        $reservations = Reservation::orderBy('created_at','desc')->paginate(10);
-        return view('Reservations/index')->with(compact('reservations'));
+        $consommations = Consommation::orderBy('id','DESC')->paginate(10);
+        return view('Consommations/index')->with(compact('consommations'));
     }
 
     /**
@@ -47,12 +46,9 @@ class ReservationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id, Request $request)
+    public function show($id)
     {
         //
-        $chambre = Chambre::all();
-        $reservation = Reservation::find($id);
-        return view('/Reservations/show')->with(compact('reservation','chambre'));
     }
 
     /**
@@ -61,19 +57,9 @@ class ReservationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id, request $request)
+    public function edit($id)
     {
         //
-        $reservation = Reservation::find($id);
-        $reservation->montant = $request->montant;
-        $reservation->valider = 1;
-        //dd($reservation);
-        $reservation->save();
-        $chambre = Chambre::find($request->chambre_id);
-            $chambre->actif = 0;
-        //dd($chambre,$reservation);
-        $chambre->save();
-        return redirect('/chambres');
     }
 
     /**
@@ -97,11 +83,5 @@ class ReservationController extends Controller
     public function destroy($id)
     {
         //
-    }
-    
-    public function detail($id, Request $request){
-    $chambre = Chambre::all();
-    $reservation = Reservation::find($id);
-    return view('/Reservations/detail')->with(compact('reservation','chambre'));            
     }
 }

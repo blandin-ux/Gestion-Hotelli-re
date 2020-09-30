@@ -70,4 +70,12 @@ Route::post('/tarifs/update','TarifierController@update');
 
 //Gestion des chambres réservées
 Route::resource('/reservations','ReservationController');
+Route::get('/reservations/{id}/detail','ReservationController@detail');
 //Fin réservation
+
+
+//Gestion des consommations
+Route::resource('/consommations','ConsommationController');
+//Fin consommation
+
+//1Cor14:33, App2, Gn3:6, 1Cor15

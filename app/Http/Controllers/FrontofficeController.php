@@ -124,7 +124,7 @@ class FrontofficeController extends Controller
         $reservation->sortie = $request->sortie;
         $reservation->telephone = $request->telephone;
         $reservation->chambre_id = $request->chambre_id;
-        dd($reservation);
+        //dd($reservation);
         $reservation->save();
         return view('FrontOffice/message')->with(compact('reservation'));
     }

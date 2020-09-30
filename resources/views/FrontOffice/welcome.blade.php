@@ -34,7 +34,7 @@
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__btn__widget">
-            <a class="btn btn-primary" href="#"> Connexion <span class="arrow_right"></span></a>
+            <a class="btn btn-primary" href="/login"> Connexion <span class="arrow_right"></span></a>
         </div>
         <div class="offcanvas__widget">
             <ul>
@@ -120,7 +120,7 @@
                                 </ul>
                             </nav>
                             <div class="header__nav__widget">
-                                <a class="btn btn-primary connexion" href="#">Connexion<span class="arrow_right"></span></a>
+                                <a class="btn btn-primary connexion" href="/login">Connexion<span class="arrow_right"></span></a>
                             </div>
                         </div>
                     </div>
@@ -222,48 +222,48 @@
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="services__item">
                         <img src="img/services/services-1.png" alt="">
-                        <h4>Free Wi-Fi</h4>
-                        <p>The massive investment in a hotel or resort requires constant reviews and control in order to
-                            make it a successful investment.</p>
+                        <h4>Gratuité du Wi-Fi</h4>
+                        <p>L'investissement massif dans un hôtel ou un complexe nécessite des examens et un contrôle constants afin de
+                            en faire un investissement réussi.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="services__item">
                         <img src="img/services/services-2.png" alt="">
-                        <h4>Premium Pool</h4>
-                        <p>Choose from 4 unique ready made concepts, let us help you create the concept perfect for you
-                            or let HCA.</p>
+                        <h4>Piscine Premium</h4>
+                        <p>Choisissez parmi 4 concepts prêts à l'emploi uniques, laissez-nous vous aider à créer le concept parfait pour vous
+                            ou laissez HCA.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="services__item">
                         <img src="img/services/services-3.png" alt="">
-                        <h4>Coffee Maker</h4>
-                        <p>HCA's Owner's Representation is taking care of just these important factors, may it be
-                            through regular site visits and spot checks.</p>
+                        <h4>Machine à café</h4>
+                        <p>La représentation du propriétaire de HCA ne prend en compte que ces facteurs importants, peut-être
+                            par des visites régulières sur site et des contrôles ponctuels.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="services__item">
                         <img src="img/services/services-4.png" alt="">
-                        <h4>Bar Wine</h4>
-                        <p>For properties with third party management companies, HCA Consultants will as well administer
-                            the terms and conditions.</p>
+                        <h4>Vin de bar</h4>
+                        <p>Pour les propriétés avec des sociétés de gestion tierces, HCA Consultants administrera également
+                            Les termes et conditions.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="services__item">
                         <img src="img/services/services-5.png" alt="">
                         <h4>TV HD</h4>
-                        <p>We provide a critical analysis of a hotel's marketing strategy, bench-marking it against
-                            industry and competitive practices.</p>
+                        <p>Nous fournissons une analyse critique de la stratégie marketing d'un hôtel, en la comparant
+                            industrie et pratiques concurrentielles.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="services__item">
                         <img src="img/services/services-6.png" alt="">
                         <h4>Restaurant</h4>
-                        <p>A hotel and restaurant investment deserves careful and market oriented financial planning and
+                        <p>Un investissement dans un hôtel et un restaurant mérite une planification financière prudente et orientée vers le marché et
                             projections.</p>
                     </div>
                 </div>
@@ -303,7 +303,7 @@
             <div class="home__explore">
                 <div class="row">
                     <div class="col-lg-9 col-md-8">
-                        <h3>Planning your next trip? Save up to 25% on your hotel</h3>
+                        <h3>Vous planifiez votre prochain voyage? Économisez jusqu'à 25% sur votre hôtel</h3>
                     </div>
                     <div class="col-lg-3 col-md-4 text-center">
                         <a href="#" class="primary-btn">Explorer More</a>
@@ -314,7 +314,7 @@
     </section>
     <!-- Fin de la section -->
 
-    <!-- Testimonial Section Begin -->
+    <!-- Debut de la section des témoignages -->
     <section class="testimonial spad">
         <div class="container">
             <div class="row">
@@ -326,13 +326,13 @@
                 <div class="col-lg-7">
                     <div class="testimonial__text">
                         <div class="section-title">
-                            <h5>Testimonials</h5>
-                            <h2>What do customers say about us?</h2>
+                            <h5>Témoignages</h5>
+                            <h2>Que disent les clients de notre Plate-forme?</h2>
                         </div>
                         <div class="testimonial__slider__content">
                             <div class="testimonial__slider owl-carousel">
                                 <div class="testimonial__item">
-                                    <h5>Detailed Review:</h5>
+                                    <h5>Examen détaillé:</h5>
                                     <div class="rating">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
@@ -340,16 +340,13 @@
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star-o"></i>
                                     </div>
-                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                                        fugiat nulla pariatur. Excepteur sint occaecat cupidat non proident, sunt in
-                                        culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde
-                                        omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+                                    <p>Pas encore disponible...#1</p>
                                     <div class="testimonial__author">
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="testimonial__author__title">
-                                                    <h5>Ridchard Houston</h5>
-                                                    <span>Director Colorlib</span>
+                                                    <h5>Nom du témoin</h5>
+                                                    <span>Statut du témoin</span>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
@@ -371,16 +368,13 @@
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star-o"></i>
                                     </div>
-                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                                        fugiat nulla pariatur. Excepteur sint occaecat cupidat non proident, sunt in
-                                        culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde
-                                        omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+                                    <p></p>
                                     <div class="testimonial__author">
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="testimonial__author__title">
-                                                    <h5>John Smith</h5>
-                                                    <span>Director Colorlib</span>
+                                                    <h5>Pas encore disponible...#2</h5>
+                                                    <span></span>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
@@ -402,16 +396,13 @@
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star-o"></i>
                                     </div>
-                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                                        fugiat nulla pariatur. Excepteur sint occaecat cupidat non proident, sunt in
-                                        culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde
-                                        omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+                                    <p>Pas encore disponible...#3</p>
                                     <div class="testimonial__author">
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="testimonial__author__title">
-                                                    <h5>Jack Kelly</h5>
-                                                    <span>Director Colorlib</span>
+                                                    <h5></h5>
+                                                    <span></span>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
@@ -425,7 +416,7 @@
                                     </div>
                                 </div>
                                 <div class="testimonial__item">
-                                    <h5>Detailed Review:</h5>
+                                    <h5></h5>
                                     <div class="rating">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
@@ -433,16 +424,13 @@
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star-o"></i>
                                     </div>
-                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                                        fugiat nulla pariatur. Excepteur sint occaecat cupidat non proident, sunt in
-                                        culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde
-                                        omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+                                    <p>Pas encore disponible...#4</p>
                                     <div class="testimonial__author">
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="testimonial__author__title">
-                                                    <h5>Richard Hobson</h5>
-                                                    <span>Director Colorlib</span>
+                                                    <h5></h5>
+                                                    <span></span>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
@@ -464,7 +452,7 @@
             </div>
         </div>
     </section>
-    <!-- Testimonial Section End -->
+    <!-- Fin de la section des témoignages -->
 
     <!-- Chooseus Section Begin -->
     <div class="chooseus spad set-bg" data-setbg="img/chooseus-bg.jpg">
@@ -473,10 +461,10 @@
                 <div class="col-lg-8 text-center">
                     <div class="chooseus__text">
                         <div class="section-title">
-                            <h5>WHY CHOOSE US</h5>
-                            <h2>Contact us now to get the latest deals and for the next booking</h2>
+                            <h5>POURQUOI NOUS CHOISIR !</h5>
+                            <h2>Contactez-nous maintenant pour obtenir les dernières offres et pour la prochaine réservation</h2>
                         </div>
-                        <a href="#" class="primary-btn">Booking Now</a>
+                        <a href="#" class="primary-btn">Réservez maintenant</a>
                     </div>
                 </div>
             </div>
@@ -491,15 +479,15 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="section-title">
-                            <h5>OUR GALLERY</h5>
-                            <h2>Explore The Most Beautiful In The Hotel</h2>
+                            <h5>De la pub</h5>
+                            <h2>Explore D'autre hôtels</h2>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="gallery__title">
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                nulla pariatur. Sunt in culpa qui officia deserunt mollit anim.</p>
-                            <a href="#" class="primary-btn">View Gallery <span class="arrow_right"></span></a>
+                            <p>Vouloir être une douleur dans le cupidatat cillum a été critiqué dans le plaisir de l'évasion Duis et dolore magna!
+                                Pas de salaire. On a tort d'abandonner leurs responsabilités d'esprit doux.</p>
+                            <a href="#" class="primary-btn">Voir la Galerie <span class="arrow_right"></span></a>
                         </div>
                     </div>
                 </div>
@@ -520,8 +508,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h5>NEWS & EVENT</h5>
-                        <h2>From Our Blog</h2>
+                        <h5>ACTUALITÉS ET ÉVÉNEMENT</h5>
+                        <h2>De notre blog</h2>
                     </div>
                 </div>
             </div>
@@ -531,7 +519,7 @@
                 </div>
                 <div class="col-lg-3 p-0 order-lg-2 col-md-6 order-md-2">
                     <div class="latest__blog__text">
-                        <div class="label">Hotel</div>
+                        <div class="label">Hôtel</div>
                         <h5>Ut enim ad minim veniam, quis nostrud</h5>
                         <p><i class="fa fa-clock-o"></i> 19th March, 2019</p>
                         <a href="#">Read More</a>

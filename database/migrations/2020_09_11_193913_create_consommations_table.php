@@ -15,7 +15,9 @@ class CreateConsommationsTable extends Migration
     {
         Schema::create('consommations', function (Blueprint $table) {
             $table->id();
-            $table->integer('client_id');
+            $table->string('name',100);
+            $table->integer('client_id')->default(0);
+            $table->integer('reservation_id')->default(0);
             $table->timestamps();
         });
     }

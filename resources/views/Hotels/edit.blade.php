@@ -32,7 +32,7 @@
     font-size: 13px;
     margin: 0;
     color: #999; 
-    background-color: linen; }
+    background: linear-gradient(-48deg, #0062cc, transparent); }
 
     input, textarea, select {
     font-family: "Muli-Regular";
@@ -260,7 +260,7 @@
 </style>
 
 <body>
-<img src="{{asset('img/coco1.png')}}" alt="" class="mr-1">
+<img src="{{asset($hotel->image_uri)}}" alt="" class="mr-1">
 <div class="wrapper">
 <div class="inner">
 <form enctype="multipart/form-data" action="/hotels/update" method="POST" >
@@ -268,17 +268,17 @@
 <input type="hidden" name="id" value="{{$hotel->id}}">
 <h3 class="text-center">Modification</h3>
 <div class="form-row">
-    <div class="form-wrapper">
+    <div class="form-wrapper col-md-5">
         <label for="">Nom *</label>
         <input value="{{$hotel->name}}" type="text" class="form-control" name="name" placeholder="Nom de l'hôtel" required>
     </div>
-    <div class="form-wrapper">
+    <div class="form-wrapper col-md-5">
         <label for="">Télephone *</label>
         <input value="{{$hotel->telephone}}" type="text" class="form-control" placeholder="Numéro de télephone" name="telephone" required>
     </div>
 </div>
 <div class="form-row">
-<div class="form-wrapper">
+<div class="form-wrapper col-md-5">
 <label for="">Adresse *</label>
 <input value="{{$hotel->adresse}}" type="text" class="form-control" name="adresse" placeholder="Adresse de l'hôtel" id="dp1" required>
 </div>
